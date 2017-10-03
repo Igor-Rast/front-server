@@ -18,7 +18,7 @@ func main() {
         	fmt.Println(dir_error)
         	os.Exit(1)
     	}
-
+	fmt.Println("PWD VAR : " + pwd)
 	r := mux.NewRouter()
 
 	// Serve static assets directly.
