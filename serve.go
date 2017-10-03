@@ -12,7 +12,7 @@ import (
 
 
 func main() {	
-
+	fmt.Println("Init Frond-end Server")
     	pwd, dir_error := os.Getwd()
     	if dir_error != nil {
         	fmt.Println(dir_error)
@@ -29,7 +29,7 @@ func main() {
 
 	srv := &http.Server{
 		Handler: handlers.LoggingHandler(os.Stdout, r),
-		Addr:    "127.0.0.1:" + "8040",
+		Addr:    "0.0.0.0:" + "8040",
 		// Good practice: enforce timeouts for servers you create!
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
