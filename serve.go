@@ -22,7 +22,8 @@ func main() {
 	r := mux.NewRouter()
 
 	// Serve static assets directly.
-	r.PathPrefix("/dist").Handler(http.FileServer(http.Dir(pwd +"/go/src/github.com/Igor-Rast/bit/dist")))
+//	r.PathPrefix("/dist").Handler(http.FileServer(http.Dir(pwd +"/go/src/github.com/Igor-Rast/bit/dist")))
+	r.PathPrefix("/dist").Handler(http.FileServer(http.Dir("/go/src/github.com/Igor-Rast/bit/dist")))
 
 	// Catch-all: Serve our JavaScript application's entry-point (index.html).
 	r.PathPrefix("/").HandlerFunc(IndexHandler(pwd +"/go/src/github.com/Igor-Rast/bit/dist"))
